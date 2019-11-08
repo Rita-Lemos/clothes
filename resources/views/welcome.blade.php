@@ -81,10 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                   Second hand, second life
                 </div>
 
                 <div class="links">
+                    <a href="{{url('/list')}}">Roupas</a>
+                    <a href="{{url('/insert-roupa')}}">Inserir Novas Roupas</a>
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
