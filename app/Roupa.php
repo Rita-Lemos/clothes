@@ -24,8 +24,8 @@ class Roupa extends Model
         return $this->belongsTo('App\Tamanho', 'tamanho_id');
     }
 
-    public  function tiporoupa(){
-        return $this->belongsTo('App\Tipo', 'tipo_id');
+    public  function tipo(){
+        return $this->belongsTo('App\Tipo', 'tipo-roupa_id');
     }
 
     public  function user(){
