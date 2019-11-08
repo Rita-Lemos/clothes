@@ -1,0 +1,1847 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>general</h1>
+<!-- START_ac9367f43bc50d60909260eabae1a50b -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/estacaoano" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"vel"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/estacaoano"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "vel"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Server Error"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/estacaoano</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the estacao_ano.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ac9367f43bc50d60909260eabae1a50b -->
+<!-- START_fc0df71431476d3cbd9c54bc533f7f10 -->
+<h2>Show the form for creating a new resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/estacaoano/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/estacaoano/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/estacaoano/create</code></p>
+<!-- END_fc0df71431476d3cbd9c54bc533f7f10 -->
+<!-- START_9b6f2019d0832386db72ff5ca481269d -->
+<h2>Store a newly created resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/estacaoano" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"commodi"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/estacaoano"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "commodi"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/estacaoano</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the estacao_ano.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_9b6f2019d0832386db72ff5ca481269d -->
+<!-- START_e3f60edc242c282ef7dd85fb79904244 -->
+<h2>Display the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/estacaoano/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"est"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/estacaoano/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "est"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">[]</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/estacaoano/{estacaoano}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the estacao_ano.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_e3f60edc242c282ef7dd85fb79904244 -->
+<!-- START_fe7038d840480acd12ef5a85db33b769 -->
+<h2>Show the form for editing the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/estacaoano/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/estacaoano/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/estacaoano/{estacaoano}/edit</code></p>
+<!-- END_fe7038d840480acd12ef5a85db33b769 -->
+<!-- START_bb9bea4a80e7d2e9ad363c9441d81728 -->
+<h2>Update the specified resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/api/estacaoano/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"aspernatur"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/estacaoano/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "aspernatur"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/estacaoano/{estacaoano}</code></p>
+<p><code>PATCH api/estacaoano/{estacaoano}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the estacao_ano.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_bb9bea4a80e7d2e9ad363c9441d81728 -->
+<!-- START_558954fe083fe8eb1137e5b41809b740 -->
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/estacaoano/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/estacaoano/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/estacaoano/{estacaoano}</code></p>
+<!-- END_558954fe083fe8eb1137e5b41809b740 -->
+<!-- START_341e7f25be1d7d91e0e5e5ec7336bd4d -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/marca" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/marca"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Server Error"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/marca</code></p>
+<!-- END_341e7f25be1d7d91e0e5e5ec7336bd4d -->
+<!-- START_c49e14106b72a38c027857f4695b8d7e -->
+<h2>Show the form for creating a new resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/marca/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/marca/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/marca/create</code></p>
+<!-- END_c49e14106b72a38c027857f4695b8d7e -->
+<!-- START_5552fb01a9ed19f6da3ba1675b1bcfa7 -->
+<h2>Store a newly created resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/marca" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"qui"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/marca"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "qui"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/marca</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the marca.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_5552fb01a9ed19f6da3ba1675b1bcfa7 -->
+<!-- START_77172cf3ead25ddd689efd0b22cbe60a -->
+<h2>Display the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/marca/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"est"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/marca/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "est"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (404):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "No query results for model [App\\Marca] 1"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/marca/{marca}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the marca.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_77172cf3ead25ddd689efd0b22cbe60a -->
+<!-- START_b94b900d09285789102860caa649861b -->
+<h2>Show the form for editing the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/marca/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/marca/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (404):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "No query results for model [App\\Marca] 1"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/marca/{marca}/edit</code></p>
+<!-- END_b94b900d09285789102860caa649861b -->
+<!-- START_87a6d20f9c7639ec3fa766e00d733c8d -->
+<h2>Update the specified resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/api/marca/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"quo"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/marca/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "quo"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/marca/{marca}</code></p>
+<p><code>PATCH api/marca/{marca}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the marca.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_87a6d20f9c7639ec3fa766e00d733c8d -->
+<!-- START_c4bf8885e3db5b2d9eea89b16b6c08e1 -->
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/marca/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/marca/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/marca/{marca}</code></p>
+<!-- END_c4bf8885e3db5b2d9eea89b16b6c08e1 -->
+<!-- START_7a22d55ad161ecbcd6505c433909ffac -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/roupa" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/roupa"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "id": 10,
+            "marca_id": 11,
+            "estacao_ano_id": 3,
+            "tamanho_id": 4,
+            "tipo-roupa_id": 7,
+            "user_id": 19,
+            "preco": 29,
+            "descricao": "casaco malha",
+            "image": "images\/35Lso6thD590q9Xi5baP4PAxA0ATDAsKrXQQUpZj.webp",
+            "created_at": "2019-11-06 17:37:23",
+            "updated_at": "2019-11-06 17:37:23",
+            "deleted_at": null,
+            "user": {
+                "id": 19,
+                "name": "Freida Hintz",
+                "email": "myrtie45@example.net",
+                "email_verified_at": "2019-11-06 09:43:57",
+                "role_id": 3,
+                "created_at": "2019-11-06 09:43:57",
+                "updated_at": "2019-11-06 09:43:57",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": 11,
+            "marca_id": 6,
+            "estacao_ano_id": 4,
+            "tamanho_id": 2,
+            "tipo-roupa_id": 5,
+            "user_id": 27,
+            "preco": 10,
+            "descricao": "calções",
+            "image": "images\/qJnlq6pUcrjpYADt9WGjOjhtmgT6YjTqZ0f3I9YD.jpeg",
+            "created_at": "2019-11-06 19:31:37",
+            "updated_at": "2019-11-06 19:31:37",
+            "deleted_at": null,
+            "user": {
+                "id": 27,
+                "name": "Jevon Murray",
+                "email": "barrows.danial@example.net",
+                "email_verified_at": "2019-11-06 09:43:57",
+                "role_id": 3,
+                "created_at": "2019-11-06 09:43:57",
+                "updated_at": "2019-11-06 09:43:57",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": 12,
+            "marca_id": 10,
+            "estacao_ano_id": 1,
+            "tamanho_id": 4,
+            "tipo-roupa_id": 1,
+            "user_id": 12,
+            "preco": 20,
+            "descricao": "camisolas",
+            "image": "images\/pnPTkcWaQ2G8IIwxrQBhxpJ4iI9CsGfVwQR1Dfpn.jpeg",
+            "created_at": "2019-11-06 19:37:01",
+            "updated_at": "2019-11-06 19:37:01",
+            "deleted_at": null,
+            "user": {
+                "id": 12,
+                "name": "Mohammed Lynch V",
+                "email": "schmeler.julianne@example.org",
+                "email_verified_at": "2019-11-06 09:43:57",
+                "role_id": 3,
+                "created_at": "2019-11-06 09:43:57",
+                "updated_at": "2019-11-06 09:43:57",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": 13,
+            "marca_id": 9,
+            "estacao_ano_id": 3,
+            "tamanho_id": 3,
+            "tipo-roupa_id": null,
+            "user_id": 14,
+            "preco": 17,
+            "descricao": "Vestido",
+            "image": "images\/sxWDiClXV8SfVOK4WGKIr8JIHDdhJii7op3m5JLv.jpeg",
+            "created_at": "2019-11-08 00:52:22",
+            "updated_at": "2019-11-08 00:52:22",
+            "deleted_at": null,
+            "user": {
+                "id": 14,
+                "name": "Kiara Hyatt",
+                "email": "gianni37@example.com",
+                "email_verified_at": "2019-11-06 09:43:57",
+                "role_id": 3,
+                "created_at": "2019-11-06 09:43:57",
+                "updated_at": "2019-11-06 09:43:57",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": 14,
+            "marca_id": 8,
+            "estacao_ano_id": 1,
+            "tamanho_id": 4,
+            "tipo-roupa_id": null,
+            "user_id": 14,
+            "preco": 55,
+            "descricao": "Camisola",
+            "image": "images\/sj2mccEiVCxbdVQK43GWl0gp2WvOvjdED0Ywhty8.jpeg",
+            "created_at": "2019-11-08 00:58:06",
+            "updated_at": "2019-11-08 00:58:06",
+            "deleted_at": null,
+            "user": {
+                "id": 14,
+                "name": "Kiara Hyatt",
+                "email": "gianni37@example.com",
+                "email_verified_at": "2019-11-06 09:43:57",
+                "role_id": 3,
+                "created_at": "2019-11-06 09:43:57",
+                "updated_at": "2019-11-06 09:43:57",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": 15,
+            "marca_id": 11,
+            "estacao_ano_id": 3,
+            "tamanho_id": 8,
+            "tipo-roupa_id": null,
+            "user_id": 25,
+            "preco": 40,
+            "descricao": "Blusa Fresca",
+            "image": "images\/CQrzCTnD3pf9F3aFmZDoqbtBNqFjX1QHfdsyf5Z2.jpeg",
+            "created_at": "2019-11-08 01:05:52",
+            "updated_at": "2019-11-08 01:05:52",
+            "deleted_at": null,
+            "user": {
+                "id": 25,
+                "name": "Alva Howell",
+                "email": "yhowe@example.org",
+                "email_verified_at": "2019-11-06 09:43:57",
+                "role_id": 3,
+                "created_at": "2019-11-06 09:43:57",
+                "updated_at": "2019-11-06 09:43:57",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": 16,
+            "marca_id": 6,
+            "estacao_ano_id": 5,
+            "tamanho_id": 3,
+            "tipo-roupa_id": null,
+            "user_id": 11,
+            "preco": 20,
+            "descricao": "Calça de Ganga",
+            "image": "images\/y7tLyhqazbQLO4Dbe7SYLnxmxpZC80bL39qBG6Mj.jpeg",
+            "created_at": "2019-11-08 10:43:19",
+            "updated_at": "2019-11-08 10:43:19",
+            "deleted_at": null,
+            "user": {
+                "id": 11,
+                "name": "Mr. Cortez Barton PhD",
+                "email": "myriam51@example.net",
+                "email_verified_at": "2019-11-06 09:43:57",
+                "role_id": 3,
+                "created_at": "2019-11-06 09:43:57",
+                "updated_at": "2019-11-06 09:43:57",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": 17,
+            "marca_id": 8,
+            "estacao_ano_id": 1,
+            "tamanho_id": 3,
+            "tipo-roupa_id": null,
+            "user_id": 25,
+            "preco": 26,
+            "descricao": "Camisola de lã amarela",
+            "image": "images\/fCvHrHwYGxq0n8TXlSkzPTLhSgRQRNFRYWewfssd.png",
+            "created_at": "2019-11-08 10:51:25",
+            "updated_at": "2019-11-08 10:51:25",
+            "deleted_at": null,
+            "user": {
+                "id": 25,
+                "name": "Alva Howell",
+                "email": "yhowe@example.org",
+                "email_verified_at": "2019-11-06 09:43:57",
+                "role_id": 3,
+                "created_at": "2019-11-06 09:43:57",
+                "updated_at": "2019-11-06 09:43:57",
+                "deleted_at": null
+            }
+        }
+    ],
+    "message": "Listagem das roupas",
+    "result": "OK"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/roupa</code></p>
+<!-- END_7a22d55ad161ecbcd6505c433909ffac -->
+<!-- START_d12ece41d85e4d897819b6364f931230 -->
+<h2>Show the form for creating a new resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/roupa/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/roupa/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/roupa/create</code></p>
+<!-- END_d12ece41d85e4d897819b6364f931230 -->
+<!-- START_8db5cb2c1ba4b4b838f52e25efcc0797 -->
+<h2>Store a newly created resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/roupa" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"marca_id":"sunt","estacao_ano_id":"amet","tamanho_id":"magni","tipo_id":"aliquid","user_id":2,"preco":8,"descricao":"laudantium","image":"aut"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/roupa"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "marca_id": "sunt",
+    "estacao_ano_id": "amet",
+    "tamanho_id": "magni",
+    "tipo_id": "aliquid",
+    "user_id": 2,
+    "preco": 8,
+    "descricao": "laudantium",
+    "image": "aut"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/roupa</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>marca_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The marca of the roupa.</td>
+</tr>
+<tr>
+<td><code>estacao_ano_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The estacao_ano_id of the roupa.</td>
+</tr>
+<tr>
+<td><code>tamanho_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The tamanho_id of the roupa.</td>
+</tr>
+<tr>
+<td><code>tipo_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The tipo_id of the roupa.</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The user creator of the roupa.</td>
+</tr>
+<tr>
+<td><code>preco</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The preco creator of the roupa.</td>
+</tr>
+<tr>
+<td><code>descricao</code></td>
+<td>string</td>
+<td>required</td>
+<td>The descricao creator of the roupa.</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>file</td>
+<td>required</td>
+<td>The image of the roupa.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_8db5cb2c1ba4b4b838f52e25efcc0797 -->
+<!-- START_aa3793c95996999d4cc8159984bab528 -->
+<h2>Display the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/roupa/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"marca_id":"voluptatem","estacao_ano_id":"quam","tamanho_id":"inventore","tipo_id":"neque","user_id":4,"preco":18,"descricao":"quo","image":"consequuntur"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/roupa/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "marca_id": "voluptatem",
+    "estacao_ano_id": "quam",
+    "tamanho_id": "inventore",
+    "tipo_id": "neque",
+    "user_id": 4,
+    "preco": 18,
+    "descricao": "quo",
+    "image": "consequuntur"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (404):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "No query results for model [App\\Roupa] 1"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/roupa/{roupa}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>marca_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The marca of the roupa.</td>
+</tr>
+<tr>
+<td><code>estacao_ano_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The estacao_ano_id of the roupa.</td>
+</tr>
+<tr>
+<td><code>tamanho_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The tamanho_id of the roupa.</td>
+</tr>
+<tr>
+<td><code>tipo_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The tipo_id of the roupa.</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The user creator of the roupa.</td>
+</tr>
+<tr>
+<td><code>preco</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The preco creator of the roupa.</td>
+</tr>
+<tr>
+<td><code>descricao</code></td>
+<td>string</td>
+<td>required</td>
+<td>The descricao creator of the roupa.</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>file</td>
+<td>required</td>
+<td>The image of the roupa.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_aa3793c95996999d4cc8159984bab528 -->
+<!-- START_c58621cd440180e7ef6d64bcfb5b6ce9 -->
+<h2>Show the form for editing the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/roupa/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/roupa/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (404):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "No query results for model [App\\Roupa] 1"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/roupa/{roupa}/edit</code></p>
+<!-- END_c58621cd440180e7ef6d64bcfb5b6ce9 -->
+<!-- START_9be43a831bea2c7e6adb6f7b55496dad -->
+<h2>Update the specified resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/api/roupa/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"marca_id":"nesciunt","estacao_ano_id":"tempora","tamanho_id":"velit","tipo_id":"esse","user_id":19,"preco":17,"descricao":"sit","image":"dolor"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/roupa/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "marca_id": "nesciunt",
+    "estacao_ano_id": "tempora",
+    "tamanho_id": "velit",
+    "tipo_id": "esse",
+    "user_id": 19,
+    "preco": 17,
+    "descricao": "sit",
+    "image": "dolor"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/roupa/{roupa}</code></p>
+<p><code>PATCH api/roupa/{roupa}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>marca_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The marca of the roupa.</td>
+</tr>
+<tr>
+<td><code>estacao_ano_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The estacao_ano_id of the roupa.</td>
+</tr>
+<tr>
+<td><code>tamanho_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The tamanho_id of the roupa.</td>
+</tr>
+<tr>
+<td><code>tipo_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The tipo_id of the roupa.</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The user creator of the roupa.</td>
+</tr>
+<tr>
+<td><code>preco</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The preco creator of the roupa.</td>
+</tr>
+<tr>
+<td><code>descricao</code></td>
+<td>string</td>
+<td>required</td>
+<td>The descricao creator of the roupa.</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>file</td>
+<td>required</td>
+<td>The image of the roupa.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_9be43a831bea2c7e6adb6f7b55496dad -->
+<!-- START_b3a0465317b5b3b09053161c8d5d033b -->
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/roupa/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/roupa/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/roupa/{roupa}</code></p>
+<!-- END_b3a0465317b5b3b09053161c8d5d033b -->
+<!-- START_248b4e695ff0bf790be78308dfddfe95 -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/tamanho" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tamanho"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Server Error"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tamanho</code></p>
+<!-- END_248b4e695ff0bf790be78308dfddfe95 -->
+<!-- START_c4ffee467b4a8aac3a1453b5bd40a7b1 -->
+<h2>Show the form for creating a new resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/tamanho/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tamanho/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tamanho/create</code></p>
+<!-- END_c4ffee467b4a8aac3a1453b5bd40a7b1 -->
+<!-- START_acaa186c99486ad30aaecf66cbe846dd -->
+<h2>Store a newly created resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/tamanho" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"velit"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tamanho"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "velit"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/tamanho</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the tamanho.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_acaa186c99486ad30aaecf66cbe846dd -->
+<!-- START_0a63ea4e8bbb2681cadcef5293e26f18 -->
+<h2>Display the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/tamanho/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"dignissimos"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tamanho/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "dignissimos"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "XS",
+    "created_at": "2019-11-06 00:54:33",
+    "updated_at": "2019-11-06 00:54:33",
+    "deleted_at": null
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tamanho/{tamanho}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the tamanho.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_0a63ea4e8bbb2681cadcef5293e26f18 -->
+<!-- START_2916c6ebfd4c637b40b39ce168c90e70 -->
+<h2>Show the form for editing the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/tamanho/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tamanho/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tamanho/{tamanho}/edit</code></p>
+<!-- END_2916c6ebfd4c637b40b39ce168c90e70 -->
+<!-- START_ab4fd93e0cdf6e39caa640139e9163f9 -->
+<h2>Update the specified resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/api/tamanho/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"maiores"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tamanho/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "maiores"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/tamanho/{tamanho}</code></p>
+<p><code>PATCH api/tamanho/{tamanho}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the tamanho.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ab4fd93e0cdf6e39caa640139e9163f9 -->
+<!-- START_f605a5fac0b233d963b0c2651da97dbc -->
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/tamanho/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tamanho/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/tamanho/{tamanho}</code></p>
+<!-- END_f605a5fac0b233d963b0c2651da97dbc -->
+<!-- START_07e7f3ae367cb99564afa991e133a461 -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/tipo" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tipo"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Server Error"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tipo</code></p>
+<!-- END_07e7f3ae367cb99564afa991e133a461 -->
+<!-- START_26d20894bfb7310b4c3140ce204e3adc -->
+<h2>Show the form for creating a new resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/tipo/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tipo/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tipo/create</code></p>
+<!-- END_26d20894bfb7310b4c3140ce204e3adc -->
+<!-- START_80a06024db4f0d37a70ede1272c3a4d5 -->
+<h2>Store a newly created resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/tipo" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"expedita"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tipo"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "expedita"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/tipo</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the tipo.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_80a06024db4f0d37a70ede1272c3a4d5 -->
+<!-- START_f695ab48314b4d59f8f1ea5d829afe74 -->
+<h2>Display the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/tipo/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"explicabo"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tipo/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "explicabo"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "Camisola",
+    "created_at": "2019-11-06 00:57:44",
+    "updated_at": "2019-11-06 00:57:44",
+    "deleted_at": null
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tipo/{tipo}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the tipo.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_f695ab48314b4d59f8f1ea5d829afe74 -->
+<!-- START_fc3faaddf5db2691ce9cbe79e1408004 -->
+<h2>Show the form for editing the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/tipo/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tipo/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tipo/{tipo}/edit</code></p>
+<!-- END_fc3faaddf5db2691ce9cbe79e1408004 -->
+<!-- START_208c69de33e9cfaba5c8dccd74aebec5 -->
+<h2>Update the specified resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/api/tipo/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"eligendi"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tipo/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "eligendi"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/tipo/{tipo}</code></p>
+<p><code>PATCH api/tipo/{tipo}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the tipo.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_208c69de33e9cfaba5c8dccd74aebec5 -->
+<!-- START_7c0de1b3482697b6ea2f65ccaa6f0c49 -->
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/tipo/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/tipo/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/tipo/{tipo}</code></p>
+<!-- END_7c0de1b3482697b6ea2f65ccaa6f0c49 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

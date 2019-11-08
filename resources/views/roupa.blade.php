@@ -17,6 +17,7 @@
                                     <p>{{$roupas->marca->name}}</p>
                                     <p>{{$roupas->estacao_ano->name}}</p>
                                     <p>{{$roupas->tamanho->name}}</p>
+                                    <p>{{$roupas->tipo->name}}</p>
                                     <p>{{$roupa->preco}}</p>
                                     <p>{{$roupa->descricao}}</p>
                                     <p>{{$roupas->user->name}}</p>
