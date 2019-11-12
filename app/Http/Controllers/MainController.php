@@ -58,7 +58,9 @@ class MainController extends Controller
             'descricao.mas'=>'Descrição demasiado longa!',
             'preco.required'=>'Insira um preço para a peça de roupa.',
             'preco.integer'=>'Preço inválido!',
-            'preco.mas'=>'Preço demasiado longo!'
+            'preco.mas'=>'Preço demasiado longo!',
+            'image.required'=>'Insira uma fotografia!',
+            'image.image'=>'Formato de imagem inválido!'
         ]);
 
         $data = $request->all();
@@ -73,10 +75,68 @@ class MainController extends Controller
     }
 
 
-    public function perfil (){
-        $user = User::all();
-        return view('perfil')-> with('user', $user);
+    public function perfil (Request $request){
+
+        $user = $request->user();
+
+        $roupas = Roupa::whereUserId($user->id)->get();
+
+        return view('perfil')->with('roupa', $roupas)->with('user', $user);
     }
+
+
+
+    public function edit()
+    {
+        $estacaoanos = EstacaoAno::all();
+        $marcas = Marca::all();
+        $tamanhos = Tamanho::all();
+        $tipos = Tipo::all();
+        $users = User::all();
+        return view('editarroupa')->with('marcas', $marcas)->with('estacao_anos', $estacaoanos)->with('tamanhos', $tamanhos)->with('tipos', $tipos)->with('users', $users);
+
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, [
+            'marca_id' => 'required|exists:marcas,id|integer',
+            'estacao_ano_id' => 'required|exists:estacao_anos,id|integer',
+            'tamanho_id' => 'required|exists:tamanhos,id|integer',
+            'tipo_id' => 'required|exists:tipos,id|integer',
+            'user_id' => 'required|exists:users,id|integer',
+            'image' => 'required|image',
+            'preco' => 'required|integer|max:50000',
+            'descricao'=> 'required|string|max:100'
+        ], [
+            'descricao.required'=> 'Insira uma descrição da peça de roupa.',
+            'descricao.string'=>'Descrição inválida!',
+            'descricao.mas'=>'Descrição demasiado longa!',
+            'preco.required'=>'Insira um preço para a peça de roupa.',
+            'preco.integer'=>'Preço inválido!',
+            'preco.mas'=>'Preço demasiado longo!',
+            'image.required'=>'Insira uma fotografia!',
+            'image.image'=>'Formato de imagem inválido!'
+        ]);
+
+        $data = $request->all();
+
+        $file = $request->file('image')->store('images');
+
+        $data['image'] = $file;
+
+        $filter = Arr::except($data, ['_token']);
+
+        $filter2 = Arr::except($filter,['_method']);
+
+        Roupa::where('id', $data['id'])->update($filter2);
+
+
+        return redirect()->route('editarroupa');
+
+        //return $filter;
+    }
+
 }
 
 

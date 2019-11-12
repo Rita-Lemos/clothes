@@ -20,6 +20,9 @@ Route::get('/list', 'MainController@list')->name('list');
 
 Route::get('/perfil', 'MainController@perfil')->name('perfil');
 
+Route::get('/edit_roupa', 'MainController@edit')->name('edit_roupa');
+Route::put('/update_roupa', 'MainController@update')->name('update_roupa');
+
 
 Route::get('/insert-roupa', 'MainController@form')->name('insert-form');
 Route::post('/insert-roupa', 'MainController@insert')->name('insert-roupa');
@@ -33,6 +36,7 @@ Auth::routes();
  * Authenticated only Routes
  */
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 /**
  * Backoffice Routes

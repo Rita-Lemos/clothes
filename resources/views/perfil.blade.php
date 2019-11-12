@@ -65,22 +65,52 @@
         border-radius: 30px!important;
     }
 
+    .title{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        margin: auto!important;
+        display: block!important;
+        font-weight: 500;
+        color: #5bbec3!important;
+    }
+
+    .card_info_user{
+        margin-top: 20px;
+
+
+    }
+
+    .info_user{
+        font-size: 18px;
+        color: #5bbec3!important;
+        list-style: circle;
+        margin-left: 20px;
+    }
+
+    .info_user span{
+
+
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        color: rgb(150,150,150);
+        margin: 10px;
+
+    }
+
 </style>
 
 @extends('layouts.app')
 
 @section('content')
     <div class="container">
-       <div>PÁGINA DO PERFIL DO UTILIZADOR</div>
-        <ul>
-            <li>Nome</li>
-            <li>Email</li>
+       <div class="title">PERFIL</div>
+        <ul class="card_info_user">
+            <li class="info_user">  Nome: <span>{{$user->name}}  </span> </li>
+            <li class="info_user">  Email: <span>{{$user->email}}</span> </li>
+            <li class="info_user">  Criada: <span>{{$user->created_at}}</span> </li>
         </ul>
 
-
-       {{-- @if(Auth::user()->id === $roupa->user_id)
-
-            <div class="row justify-content-center">
+        <div class="row justify-content-center">
                 <div class="col-md-8">
                     @foreach($roupa as $roupas)
                         <div class="card">
@@ -99,17 +129,26 @@
                                             <li> <span class="lista_roupa"> Preço:</span> {{$roupas->preco}} €</li>
                                             <li> <span class="lista_roupa"> Vendedor: </span> {{$roupas->user->name}}</li>
                                             <li> <span class="lista_roupa"> Email de contacto: </span> {{$roupas->user->email}}</li>
-
                                         </ul>
+                                        @if(!$roupas->deleted_at)
+                                            <a href="{{ route('update_roupa', $roupas->id) }}"><button class="btn btn-success btn-circle btn-sm"><i class="fa fa-edit"></i></button></a>
+
+                                            <form style="display: inline-block" method="post" action="{{ route('roupa.destroy', $roupas->id) }}">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger btn-circle btn-sm">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     @endforeach
                 </div>
             </div>
-            @endif--}}
-
     </div>
 @endsection
 

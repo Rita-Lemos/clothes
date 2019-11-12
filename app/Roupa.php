@@ -11,6 +11,8 @@ class Roupa extends Model
         'marca_id', 'estacao_ano_id', 'tamanho_id', 'tipo-roupa_id', 'user_id', 'preco', 'descricao', 'image'
     ];
 
+
+
     public function estacao_ano(){
 
         return $this->belongsTo('App\EstacaoAno', 'estacao_ano_id');
