@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{--<title>{{ config('app.name', 'Laravel')}}</title>--}}
+    <title>Second hand, Second life</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/bo.js') }}" defer></script>
@@ -18,13 +19,28 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .cabecalho{
+            background-color: #56bec3!important;
+        }
+        .text-cabe{
+            color: white!important;
+        }
+
+        .img_logo{
+            width: 80px;
+            height: 80px;
+        }
+
+    </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm cabecalho">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand text-cabe" href="{{ url('/') }}">
+                    {{--{ config('app.name', 'Laravel') }}--}}
+                    <img class="img_logo" src=" /images/logo_api_v2.png">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

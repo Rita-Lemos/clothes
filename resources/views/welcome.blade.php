@@ -4,15 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Second Hand, Second Life</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: whitesmoke;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -45,22 +46,40 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 60px;
+                color: #56bec3;
+                margin-top: 20px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
             }
 
             .links > a {
-                color: #636b6f;
+                color: rgb(150,150,150);
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                font-family: 'Montserrat', sans-serif;
+
             }
 
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .logo{
+                width: 300px;
+                height: 300px;
+                display: block;
+                margin:auto;
+            }
+            .logo img{
+                width: 300px;
+                height: 300px;
+            }
+
         </style>
     </head>
     <body>
@@ -80,22 +99,15 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                   Second hand, second life
+
+                <div class="logo">
+                    <img  src="/images/logo_api.png">
                 </div>
 
-                <div class="links">
-                    <a href="{{url('/list')}}">Roupas</a>
-                    <a href="{{url('/insert-roupa')}}">Inserir Novas Roupas</a>
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="title m-b-md">
+                   Second hand,  Second life
                 </div>
+
             </div>
         </div>
     </body>

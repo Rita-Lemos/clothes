@@ -20,10 +20,7 @@ class MainController extends Controller
 
     public  function list()
     {
-        //return EstacaoAno::all();
-        //return Marca::all();
-        //return Tamanho::all();
-        //return Tipo::all();
+
         $roupa = Roupa::all();
 
         return view('roupa')
@@ -46,7 +43,7 @@ class MainController extends Controller
 
     public function insert(Request $request)
     {
-       /* $this->validate($request, [
+        $this->validate($request, [
             'marca_id' => 'required|exists:marcas,id|integer',
             'estacao_ano_id' => 'required|exists:estacao_anos,id|integer',
             'tamanho_id' => 'required|exists:tamanhos,id|integer',
@@ -54,7 +51,7 @@ class MainController extends Controller
             'user_id' => 'required|exists:users,id|integer',
             'image' => 'required|image',
             'preco' => 'required|integer|max:50000',
-            'descicao'=> 'required|string|max:100'
+            'descricao'=> 'required|string|max:100'
         ], [
             'descricao.required'=> 'Insira uma descrição da peça de roupa.',
             'descricao.string'=>'Descrição inválida!',
@@ -62,7 +59,7 @@ class MainController extends Controller
             'preco.required'=>'Insira um preço para a peça de roupa.',
             'preco.integer'=>'Preço inválido!',
             'preco.mas'=>'Preço demasiado longo!'
-        ]);*/
+        ]);
 
         $data = $request->all();
 
@@ -74,4 +71,12 @@ class MainController extends Controller
 
         return redirect()->route('list');
     }
+
+
+    public function perfil (){
+        $user = User::all();
+        return view('perfil')-> with('user', $user);
+    }
 }
+
+

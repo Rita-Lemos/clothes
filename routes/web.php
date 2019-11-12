@@ -18,6 +18,9 @@ Route::get('/', 'MainController@index')->name('index');
 
 Route::get('/list', 'MainController@list')->name('list');
 
+Route::get('/perfil', 'MainController@perfil')->name('perfil');
+
+
 Route::get('/insert-roupa', 'MainController@form')->name('insert-form');
 Route::post('/insert-roupa', 'MainController@insert')->name('insert-roupa');
 
