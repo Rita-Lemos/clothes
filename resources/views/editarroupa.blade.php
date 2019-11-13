@@ -1,15 +1,21 @@
-@extends('layouts.bo')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    @foreach($roupa as $roupas)
 
-    <h1 class="h3 mb-2 text-gray-800">Edit User</h1>
+        <div class="row">
+            <div class="col-md-4">
 
-    <div class="card shadow mb-4">
+              <div class="card shadow mb-4">
+
         <div class="card-body">
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('update_roupa', $roupas->id)}}">
 
-                {{ csrf_field() }}
-                {{method_field('put')}}
+            <form method="POST" action="{{ route('update_roupa', $roupas->id)}}" enctype="multipart/form-data">
+                @csrf
+                @method('put')
+                <input type="hidden" name="_method" value="put">
+                <input type="hidden" name="id" value="{{}}">
 
 
                 <div class="form-group row">
@@ -175,7 +181,11 @@
                     </div>
                 </div>
             </form>
+
         </div>
-
-
+    </div>
+        </div>
+        </div>
+        @endforeach
+</div>
 @endsection

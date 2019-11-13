@@ -81,7 +81,7 @@
                                     <img class="img-fluid" src="/uploads/{{$roupas->image}}">
                                 </div>
                                 <div class="col-md-6">
-                                  <h5 class="card-title">Tipo de Roupa {{--p>{{$roupas->tipo->name}}</p>--}}</h5>
+                                  <h5 class="card-title"></h5>
                                     <ul class="descricao_peca">
                                         <li> <span class="lista_roupa"> Marca: </span> {{$roupas->marca->name}}</li>
                                         <li> <span class="lista_roupa"> Estação do Ano: </span> {{$roupas->estacao_ano->name}}</li>
@@ -90,6 +90,7 @@
                                         <li> <span class="lista_roupa"> Preço:</span> {{$roupas->preco}} €</li>
                                         <li> <span class="lista_roupa"> Vendedor: </span> {{$roupas->user->name}}</li>
                                         <li> <span class="lista_roupa"> Email de contacto: </span> {{$roupas->user->email}}</li>
+                                        {{--<li> <span class="lista_roupa"> Tipo de roupa: </span> {{$roupas->tipo->name}}</li>--}}
 
                                     </ul>
                                 </div>

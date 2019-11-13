@@ -164,7 +164,7 @@ class RoupaController extends Controller
      * @param  \App\Roupa  $roupa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Roupa $roupa)
+    public function update(Request $request, Roupa $roupas)
     {
         //
         $data = $request->all();
@@ -175,9 +175,9 @@ class RoupaController extends Controller
             $data['image'] = $file;
         }
 
-        $roupa->update($data);
+        $roupas->update($data);
 
-        return $roupa;
+        return back()->withErrors(['success' => 'User updated.']);
     }
 
     /**
@@ -190,6 +190,7 @@ class RoupaController extends Controller
     {
         //
         $roupa->delete();
-        return 'deleted';
+
+        return back()->withErrors(['success' => 'Roupa apagada!']);
     }
 }

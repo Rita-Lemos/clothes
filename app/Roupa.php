@@ -8,7 +8,7 @@ class Roupa extends Model
 {
     //
     protected  $fillable = [
-        'marca_id', 'estacao_ano_id', 'tamanho_id', 'tipo-roupa_id', 'user_id', 'preco', 'descricao', 'image'
+        'marca_id', 'estacao_ano_id', 'tamanho_id', 'tipo_id', 'user_id', 'preco', 'descricao', 'image'
     ];
 
 
@@ -27,7 +27,7 @@ class Roupa extends Model
     }
 
     public  function tipo(){
-        return $this->belongsTo('App\Tipo', 'tipo-roupa_id');
+        return $this->belongsTo('App\Tipo', 'tipo_id');
     }
 
     public  function user(){

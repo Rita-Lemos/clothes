@@ -21,8 +21,8 @@ class CreateRoupasTable extends Migration
             $table->foreign('estacao_ano_id')->references('id')->on('estacao_anos');
             $table->integer('tamanho_id')->unsigned()->nullable();
             $table->foreign('tamanho_id')->references('id')->on('tamanhos');
-            $table->integer('tipo-roupa_id')->unsigned()->nullable();
-            $table->foreign('tipo-roupa_id')->references('id')->on('tipos');
+            $table->integer('tipo_id')->unsigned()->nullable();
+            $table->foreign('tipo_id')->references('id')->on('tipos');
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('preco');
