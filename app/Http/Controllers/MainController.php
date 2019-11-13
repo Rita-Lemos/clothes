@@ -89,25 +89,25 @@ class MainController extends Controller
 
     public function edit(Request $request)
     {
-        $checkrequest = $request->exists('id');
+        /*$checkrequest = $request->exists('id');
         if ($checkrequest==false) {
-            return redirect('/perfil');
-        } else {
+            return redirect('/');
+        } else {*/
             $data = $request->all();
             $roupas = Roupa::where($data['id'])->get();
             $estacaoanos = EstacaoAno::whereroupa_id($data['id'])->get();
             $marcas = Marca::whereroupa_id($data['id'])->get();
             $tamanhos = Tamanho::whereroupa_id($data['id'])->get();
             $tipos = Tipo::whereroupa_id($data['id'])->get();
-           // $users = User::whereroupa_id($data['id'])->get();
-            return view('editarroupa')
+            $users = User::whereroupa_id($data['id'])->get();
+            return view('edit_roupa')
                 ->whit('roupa', $roupas)
                 ->with('marcas', $marcas)
                 ->with('estacao_anos', $estacaoanos)
                 ->with('tamanhos', $tamanhos)
-                ->with('tipos', $tipos);
-             //   ->with('users', $users);
-        }
+                ->with('tipos', $tipos)
+                 ->with('users', $users);
+    //    }
 
     }
 
@@ -157,7 +157,6 @@ class MainController extends Controller
 
         $filter = Arr::except($data, ['_token']);
         $filter2 = Arr::except($filter, ['_method']);
-
         Roupa::where('id', $data['id'])->update($filter2);
 
         return redirect('/perfil');

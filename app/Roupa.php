@@ -8,7 +8,7 @@ class Roupa extends Model
 {
     //
     protected  $fillable = [
-        'marca_id', 'estacao_ano_id', 'tamanho_id', 'tipo_id', 'user_id', 'preco', 'descricao', 'image'
+        'id','marca_id', 'estacao_ano_id', 'tamanho_id', 'tipo_id', 'user_id', 'preco', 'descricao', 'image'
     ];
 
 

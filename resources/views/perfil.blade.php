@@ -130,8 +130,8 @@
                                             <li> <span class="lista_roupa"> Vendedor: </span> {{$roupas->user->name}}</li>
                                             <li> <span class="lista_roupa"> Email de contacto: </span> {{$roupas->user->email}}</li>
                                         </ul>
-                                        {{--@if(!$roupas->deleted_at)--}}
-                                            <a href="edit_roupa/?id={{$roupas->id}}"><button class="btn btn-success btn-circle btn-sm"><i class="fa fa-edit"></i></button></a>
+                                        @if(!$roupas->deleted_at)
+                                           <a href="{{ route('edit_roupa', $roupas->id) }}"><button class="btn btn-success btn-circle btn-sm"><i class="fa fa-edit"></i></button></a>
 
                                             <form style="display: inline-block" method="post" action="{{ route('roupa.destroy', $roupas->id) }}">
                                                 @csrf
@@ -140,7 +140,7 @@
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </form>
-                                        {{--@endif--}}
+                                        @endif
                                     </div>
                                 </div>
                             </div>

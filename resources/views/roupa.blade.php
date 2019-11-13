@@ -65,12 +65,27 @@
         border-radius: 30px!important;
     }
 
+    .sub-menu{
+        width: 400px;
+        height: 500px;
+        position: fixed;
+        top: 100px;
+        background-color: #1d68a7;
+        left: 0;
+    }
 </style>
 
 @extends('layouts.app')
 
 @section('content')
     <div class="container">
+        <div class="sub-menu">
+            <p>ESTAÇÕES DO ANO</p>
+            @foreach($roupa as $roupas)
+
+                <p>{{$roupas->estacao_ano->name}}</p>
+                @endforeach
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 @foreach($roupa as $roupas)
