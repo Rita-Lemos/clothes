@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RoupaStoreRequest;
 use App\Roupa;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
@@ -14,17 +15,19 @@ class RoupaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
         //return Roupa::all();
+        $user = $request->user();
 
         $roupa = Roupa::with('user')->get();
 
         $response  = [
             'data'=>$roupa,
             'message'=>'Listagem das roupas',
-            'result'=>'OK'
+            'result'=>'OK',
+            'user'=> $user,
         ];
 
         return response ($response);
@@ -56,7 +59,7 @@ class RoupaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoupaStoreRequest $request)
     {
         //
 
@@ -78,41 +81,6 @@ class RoupaController extends Controller
         return response($response, 201);
 
 
-        /*$validator = Validator::make($data, [
-            'descricao'=> 'required|string|max:100',
-            'preco'=> 'requiride|integer|max:6',
-            //'marca_id'=>'required',
-            //'estacao_ano_id'=>'required',
-            //'tamanho_id'=> 'required',
-            //'tipo-roupa_id'=>'required',
-            //'user_id'=>'required'
-        ],
-            [
-                'descricao.required'=> 'Insira uma descrição da peça de roupa.',
-                'descricao.string'=>'Descrição inválida!',
-                'descricao.mas'=>'Descrição demasiado longa!',
-                'preco.required'=>'Insira um preço para a peça de roupa.',
-                'preco.integer'=>'Preço inválido!',
-                'preco.mas'=>'Preço demasiado longo!'
-
-            ]);
-
-        if ($validator->fails())
-            return $validator->errors()->all();*/
-
-
-       /* $roupas = Roupa::create([
-            'marca_id' => $data['marca_id'],
-            'estacao_ano_id'=> $data['estacao_ano_id'],
-            'tamanho_id'=> $data['tamanho_id'],
-            'tipo-roupa_id'=> $data['tipo-roupa_id'],
-            'user_id'=> $data['user_id'],
-            'preco'=>$data['preco'],
-            'descricao'=>$data['descricao'],
-            'image'=>$data['image']
-        ]);
-
-        return $roupas;*/
     }
 
     /**

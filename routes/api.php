@@ -13,16 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});*/
+
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::resource('roupa', 'RoupaController');
+
 });
 
+
 Route::resource('estacaoano', 'EstacaoAnoController');
-
 Route::resource('marca', 'MarcaController');
-
-Route::resource('roupa', 'RoupaController');
-
 Route::resource('tamanho', 'TamanhoController');
-
 Route::resource('tipo', 'TipoController');

@@ -57,7 +57,7 @@
                 color: rgb(150,150,150);
                 padding: 0 25px;
                 font-size: 13px;
-                font-weight: 600;
+                font-weight: 500;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;

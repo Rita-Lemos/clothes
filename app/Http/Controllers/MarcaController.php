@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MarcasStoreRequest;
 use App\Marca;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -47,12 +48,12 @@ class MarcaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MarcasStoreRequest $request)
     {
         //
         $data=$request->all();
 
-       $validator = Validator::make($data, [
+       /*$validator = Validator::make($data, [
             'name'=> 'required|string|max:100',
         ],
             [
@@ -62,13 +63,19 @@ class MarcaController extends Controller
             ]);
 
         if ($validator->fails())
-            return $validator->errors()->all();
+            return $validator->errors()->all();*/
 
         $marca = Marca::create([
             'name' => $data['name']
         ]);
 
-        return $marca;
+        $response  = [
+            'data'=>$marca,
+            'message'=>'Listagem das marcas',
+            'result'=>'OK'
+        ];
+
+        return response($response, 201);
     }
 
     /**

@@ -1,10 +1,77 @@
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<style>
+    html, body {
+        background-color: whitesmoke;
+        height: 100vh;
+        margin: 0;
+    }
+
+
+    .links > a {
+        color: rgb(150,150,150);
+        padding: 0 25px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+
+    }
+
+    .logo img{
+        width: 300px;
+        height: 300px;
+    }
+
+
+    .form_edit{
+        border:1px solid #5bbec3!important;
+        border-radius: 20px!important;
+    }
+
+    .card-header{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        color: white;
+        background-color: #5bbec3!important;
+        border-radius: 20px!important;
+    }
+
+    .text-md-right{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 17px;
+        color: rgb(100,100,100);
+    }
+
+    .form-control{
+        border: 1px solid #5bbec3!important;
+        font-family: 'Montserrat', sans-serif!important;
+        font-size: 14px!important;
+        color: rgb(50,50,50)!important;
+    }
+
+    .btn_adicionar{
+        background-color: #5bbec3!important;
+        border: none!important;
+        margin-top: 20px!important;
+        width: 100px!important;
+        height: 40px!important;
+    }
+
+</style>
+
 @extends('layouts.app')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card form_edit">
                     <div class="card-header">Insira Aqui Nova Peça de Roupa</div>
 
                     <div class="card-body">
@@ -174,7 +241,7 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary btn_adicionar">
                                         {{ __('Adicionar') }}
                                     </button>
                                 </div>

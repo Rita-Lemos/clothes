@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TipoStoreRequest;
 use App\Tipo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -48,12 +49,12 @@ class TipoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TipoStoreRequest $request)
     {
         //
     $data=$request->all();
 
-        $validator = Validator::make($data, [
+       /* $validator = Validator::make($data, [
             'name'=> 'required|string|max:50',
         ],
             [
@@ -63,13 +64,20 @@ class TipoController extends Controller
             ]);
 
         if ($validator->fails())
-            return $validator->errors()->all();
+            return $validator->errors()->all();*/
 
     $tipo = Tipo::create([
        'name' => $data['name']
     ]);
 
-    return $tipo;
+
+        $response = [
+            'data' => $tipo,
+            'message' => 'Listagem das marcas',
+            'result' => 'OK'
+        ];
+
+        return response($response, 201);
 
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TamanhoStoreRequest;
 use App\Tamanho;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -47,12 +48,12 @@ class TamanhoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TamanhoStoreRequest $request)
     {
         //
-        $data=$request->all();
+        $data = $request->all();
 
-        $validator = Validator::make($data, [
+        /*$validator = Validator::make($data, [
             'name'=> 'required|string|max:8',
         ],
             [
@@ -62,13 +63,19 @@ class TamanhoController extends Controller
             ]);
 
         if ($validator->fails())
-            return $validator->errors()->all();
+            return $validator->errors()->all();*/
 
         $tamanho = Tamanho::create([
             'name' => $data['name']
         ]);
 
-        return $tamanho;
+        $response = [
+            'data' => $tamanho,
+            'message' => 'Listagem das marcas',
+            'result' => 'OK'
+        ];
+
+        return response($response, 201);
     }
 
     /**

@@ -94,7 +94,29 @@
         font-size: 15px;
         color: rgb(150,150,150);
         margin: 10px;
+    }
 
+    .btn_editar{
+        width: 75px!important;
+        height: 30px!important;
+        background-color: #56bec3!important;
+        border: none!important;
+        font-family: 'Montserrat', sans-serif!important;
+        font-size: 15px!important;
+        color: white!important;
+        text-align: center!important;
+    }
+
+    .btn_apagar{
+        width: 75px!important;
+        height: 30px!important;
+        background-color:darkred!important;
+        border: none!important;
+        font-family: 'Montserrat', sans-serif!important;
+        font-size: 15px!important;
+        color: white!important;
+        margin-left: 10px!important;
+        text-align: center!important;
     }
 
 </style>
@@ -131,13 +153,13 @@
                                             <li> <span class="lista_roupa"> Email de contacto: </span> {{$roupas->user->email}}</li>
                                         </ul>
                                         @if(!$roupas->deleted_at)
-                                           <a href="{{ route('edit_roupa', $roupas->id) }}"><button class="btn btn-success btn-circle btn-sm"><i class="fa fa-edit"></i></button></a>
+                                           <a href="{{ route('edit_roupa', $roupas->id) }}"><button class="btn btn-success btn-circle btn-sm btn_editar">Editar</button></a>
 
                                             <form style="display: inline-block" method="post" action="{{ route('roupa.destroy', $roupas->id) }}">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fa fa-trash"></i>
+                                                <button type="submit" class="btn btn-danger btn-circle btn-sm btn_apagar">
+                                                  Apagar
                                                 </button>
                                             </form>
                                         @endif

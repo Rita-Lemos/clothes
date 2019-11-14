@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EstacaoAnoStoreRequest;
 use App\EstacaoAno;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -51,12 +52,12 @@ class EstacaoAnoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EstacaoAnoStoreRequest $request)
     {
         //
         $data=$request->all();
 
-        $validator = Validator::make($data, [
+        /*$validator = Validator::make($data, [
             'name'=> 'required|string|max:100',
         ],
             [
@@ -66,13 +67,20 @@ class EstacaoAnoController extends Controller
             ]);
 
         if ($validator->fails())
-            return $validator->errors()->all();
+            return $validator->errors()->all();*/
 
         $estacaoano = EstacaoAno::create([
             'name' => $data['name']
         ]);
 
-        return $estacaoano;
+
+        $response  = [
+            'data'=>$estacaoano,
+            'message'=>'Listagem das estações do ano',
+            'result'=>'OK'
+        ];
+
+        return response($response, 201);
 
     }
 

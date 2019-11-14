@@ -11,7 +11,7 @@
     }
 
     .title {
-        font-size: 25px;
+        font-size: 20px;
         color: rgb(150,150,150);
         margin-top: 20px;
         font-family: 'Montserrat', sans-serif;
@@ -53,8 +53,7 @@
         background-color: #56bec3;
         color: white;
         font-family: 'Montserrat', sans-serif;
-        font-weight: 500;
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
         padding-top: 80px;
         border-radius: 25px;

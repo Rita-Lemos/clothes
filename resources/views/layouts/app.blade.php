@@ -32,6 +32,35 @@
             height: 80px;
         }
 
+        .pages{
+            display: block;
+            color: white!important;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            float: left;
+            text-align: center;
+            margin-left: 20px;
+        }
+
+        #navbarDropdown{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: white!important;
+        }
+        .dropdown-menu{
+            width: 150px;
+            text-align: right;
+            background-color: rgba(250,250,250);
+            border: none;
+        }
+
+        .dropdown-item{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            border-bottom: 1px solid #56bec3;
+            color: rgb(150,150,150)!important;
+        }
+
     </style>
 </head>
 <body>
@@ -48,8 +77,13 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link pages" href="{{ url('/home') }}">Home</a>
+                            <a class="nav-link pages" href="{{url('/list')}}">Ver Roupas</a>
+                            <a class="nav-link pages" href="{{url('/insert-roupa')}}">Inserir Nova Roupa</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -75,7 +109,7 @@
                                         <a class="dropdown-item" href="{{ route('admin') }}">Backoffice</a>
                                     @endif
 
-                                    <a class="dropdown-item" href="{{ route('perfil') }}"> Perfil </a>
+                                    <a class="dropdown-item" href="{{ route('perfil') }}">Perfil</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
