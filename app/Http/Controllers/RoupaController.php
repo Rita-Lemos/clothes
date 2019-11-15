@@ -128,14 +128,15 @@ class RoupaController extends Controller
      * @bodyParam image file required The image of the roupa.
      *
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Roupa  $roupa
+     * @param  \Illuminate\Http\Request $request
+     * @param \App\Roupa $roupa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Roupa $roupas)
+    public function update(Request $request, Roupa $roupa)
     {
         //
         $data = $request->all();
+
 
         if ($request->hasFile('image')) {
             $file = $request->file('image')->store('images');
@@ -143,9 +144,15 @@ class RoupaController extends Controller
             $data['image'] = $file;
         }
 
-        $roupas->update($data);
+        $roupa->update($data);
 
-        return back()->withErrors(['success' => 'User updated.']);
+        $response=[
+            'data' => $roupa,
+            'message'=> 'Roupa Editada',
+            'result'=> 'ok'
+        ];
+
+        return response($response, 200);
     }
 
     /**
@@ -159,6 +166,6 @@ class RoupaController extends Controller
         //
         $roupa->delete();
 
-        return back()->withErrors(['success' => 'Roupa apagada!']);
+        return 'deleted';
     }
 }
